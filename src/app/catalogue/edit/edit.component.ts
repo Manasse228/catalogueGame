@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Game} from '../../Models/Game';
+import { CatalogueService } from '../../Services/Catalogue/catalogue.service';
 
 @Component({
   selector: 'app-edit',
@@ -8,11 +9,18 @@ import {Game} from '../../Models/Game';
 })
 export class EditComponent implements OnInit {
 
-  showPanel: false;
+  showPanel = true;
   @Input() game: Game;
-  constructor() { }
+  constructor(private catalogueService: CatalogueService) { }
 
   ngOnInit() {
+  }
+
+  showPanelTab() {
+    this.showPanel = false;
+  }
+  editGame(game: Game) {
+    this.catalogueService.editGame(game);
   }
 
 }
