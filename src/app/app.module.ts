@@ -10,6 +10,7 @@ import { CreateGameComponent } from './create-game/create-game.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { DetailComponent } from './catalogue/detail/detail.component';
 import { EditComponent } from './catalogue/edit/edit.component';
+import { BasketComponent } from './basket/basket.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EditComponent } from './catalogue/edit/edit.component';
     CreateGameComponent,
     CatalogueComponent,
     DetailComponent,
-    EditComponent
+    EditComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,
