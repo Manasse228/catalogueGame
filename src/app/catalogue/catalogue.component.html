@@ -1,3 +1,25 @@
-<p>
-  catalogue works!
-</p>
+<mat-accordion >
+
+
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false"
+                       style="width: 800px"
+                       *ngFor="let game of catalogue"
+  >
+
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h1>{{ game._nom }}</h1>
+      </mat-panel-title>
+      <mat-panel-description>
+        <h1> Pour {{ game._categorie }}</h1>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-detail [game]="game"></app-detail>
+
+  </mat-expansion-panel>
+
+
+
+</mat-accordion>

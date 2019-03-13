@@ -1,3 +1,30 @@
-<p>
-  create-game works!
-</p>
+
+<form (submit)="addGame(nom, categorie, description, console)">
+  <div class="example-container">
+    <mat-form-field style="width: 250px">
+      <input matInput placeholder="Nom" #nom >
+    </mat-form-field>
+
+    <mat-form-field style="width: 250px">
+      <input matInput placeholder="Catégorie" #categorie >
+    </mat-form-field>
+
+    <mat-form-field style="width: 250px">
+      <textarea matInput placeholder="Description" #description ></textarea>
+    </mat-form-field>
+
+    <mat-form-field style="width: 250px">
+      <mat-select placeholder="Console" #console >
+        <mat-option value="Play Station">PS</mat-option>
+        <mat-option value="GameBoy">GameBoy</mat-option>
+        <mat-option value="Sega">Sega</mat-option>
+        <mat-option value="Nitendo">Nitendo</mat-option>
+        <mat-option value="Witch">Witch</mat-option>
+        <mat-option value="Game Cube">Game Cube</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+
+    <button mat-raised-button color="primary" type="submit">Add Game</button>
+  </div>
+</form>

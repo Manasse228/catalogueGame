@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input  } from '@angular/core';
+import { Game } from '../../Models/Game';
+import { CatalogueService } from '../../Services/Catalogue/catalogue.service';
 
 @Component({
   selector: 'app-detail',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-
-  constructor() { }
+  @Input() game: Game;
+  constructor(public catalogueService: CatalogueService ) { }
 
   ngOnInit() {
   }
+
+  deleteGame(game: Game) {
+    if (confirm('Are you sure you want to delete this Game from Catalogue ?' )) {
+      this.catalogueService.removeGame(game);
+    }
+  }
+
+
 
 }

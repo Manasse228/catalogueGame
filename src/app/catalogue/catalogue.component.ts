@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Game } from '../Models/Game';
+import { CatalogueService } from '../Services/Catalogue/catalogue.service';
 
 @Component({
   selector: 'app-catalogue',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogueComponent implements OnInit {
 
-  constructor() { }
+  panelOpenState = false;
+  catalogue: Game[];
+
+  constructor(public catalogueService: CatalogueService) { }
 
   ngOnInit() {
+    this.catalogue = this.catalogueService.getListCatalogue();
   }
 
 }
