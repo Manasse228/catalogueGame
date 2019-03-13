@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Game} from '../../Models/Game';
 
 @Component({
   selector: 'app-edit',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditComponent implements OnInit {
 
+  showPanel: false;
+  @Input() game: Game;
   constructor() { }
 
   ngOnInit() {
