@@ -26,6 +26,7 @@ export class CatalogueService {
   }
 
   addGame(game: Game) {
+    game.setId(this.catalogue.length);
     this.catalogue.push(game);
     let cat = [];
     if (localStorage.getItem('catalogue') === null) {
@@ -45,12 +46,13 @@ export class CatalogueService {
       if (game === this.catalogue[i]) {
         this.catalogue.splice(i, 1);
         localStorage.setItem('catalogue', JSON.stringify(this.catalogue));
+        break;
       }
     }
   }
-  editGame(game: Game) {
-    this.removeGame(game);
-    this.addGame(game);
+  editGame(game: Game, id: number) {
+    this.catalogue[id] = game;
+    localStorage.setItem('catalogue', JSON.stringify(this.catalogue));
   }
 
 }

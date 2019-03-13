@@ -19,8 +19,10 @@ export class EditComponent implements OnInit {
   showPanelTab() {
     this.showPanel = false;
   }
-  editGame(game: Game) {
-    this.catalogueService.editGame(game);
+  editGame(nom: HTMLInputElement, categorie: HTMLInputElement, description: HTMLInputElement, console: HTMLInputElement, id: number) {
+    const editGame = new Game(nom.value, categorie.value , description.value, console.value);
+    editGame.setId(id);
+    this.catalogueService.editGame(editGame, id);
   }
 
 }

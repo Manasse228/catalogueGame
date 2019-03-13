@@ -1,6 +1,7 @@
 
 <button mat-raised-button color="accent" (click)="showPanelTab()" >Edit</button>
-<form (submit)="editGame(nom, categorie, description, console)" [hidden]="showPanel">
+
+<form (submit)="editGame(nom, categorie, description, console, game._id)" [hidden]="showPanel">
   <div class="example-container">
     <mat-form-field style="width: 250px">
       <input matInput placeholder="Nom" [value]="game._nom" #nom >

@@ -3,6 +3,7 @@ export class Game {
     private _categorie: string;
     private _description: string;
     private _console: string;
+    private _id: number;
 
 
     constructor(nom: string, categorie: string, description: string, console: string) {
@@ -45,4 +46,12 @@ export class Game {
         this._console = value;
     }
 
+
+    get id(): number {
+        return this._id;
+    }
+
+    setId(value: number) {
+        this._id = value;
+    }
 }
