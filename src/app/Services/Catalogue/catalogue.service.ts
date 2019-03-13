@@ -11,8 +11,8 @@ export class CatalogueService {
 
     this.catalogue = [
       new Game('Donald', 'Enfant',
-          'Canard Game can play with other person.. this is example.. Buy currency', 'GameBoy'),
-      new Game('Picsou', 'Adult', 'Canard Dance', 'Sega')
+          'Canard Game can play with other person.. this is example.. Buy currency', 'GameBoy').setId(0),
+      new Game('Picsou', 'Adult', 'Canard Dance', 'Sega').setId(0)
     ];
   }
 

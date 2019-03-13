@@ -53,5 +53,6 @@ export class Game {
 
     setId(value: number) {
         this._id = value;
+        return this;
     }
 }
